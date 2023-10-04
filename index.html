@@ -12,7 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>gregslist</title>
+  <title>Gregslist</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ms-2">gregslist</span>
+        <span class="ms-2">Gregslist</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
           <!-- NAVLINKS -->
           <a href="#/about" class="nav-link">About</a>
           <a href="#/cars" class="nav-link">Cars</a>
-          <!-- TODO create a link tag to navigate to houses page -->
+          <a href="#/houses" class="nav-link">Houses</a>
         </div>
       </div>
     </nav>
@@ -42,7 +42,68 @@
   <!-- SECTION -->
   <main id="router-view">
     <!-- PRIMARY VIEWPORT -->
-    <!-- TODO once you are on the houses page, write your HTML here -->
+
+    <div class="container-fluid p-2 p-md-5">
+      <div class="row justify-content-between p-4">
+        <div class="col-6 col-sm-4 col-md-3">
+          <p class="fs-1">Houses</p>
+        </div>
+        <button class="col-6 col-sm-4 col-md-3 btn btn-success" type="button" data-bs-toggle="modal"
+          data-bs-target="#formModal">List a house</button>
+      </div>
+      <section id="houses-dump" class="row">
+        <!-- HOUSES POPULATE HERE -->
+      </section>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">List a House</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form onsubmit="app.HousesController.addHouse(event)">
+              <label for="title">Listing Title</label>
+              <input id="title" name="title" type="text" placeholder="Small Bungalow" minlength="3" maxlength="25"
+                required>
+
+              <label for="yearBuilt">Year Built</label>
+              <input id="yearBuilt" name="yearBuilt" type="number" min="0" max="2024" placeholder="1893" required>
+
+              <label for="price">Price</label>
+              <input id="price" name="price" type="number" min="0" max="9999999999" placeholder="1000000" required>
+
+              <label for="imgUrl">Image Url</label>
+              <input id="imgUrl" name="imgUrl" type="url" maxlength="500" placeholder="https://imageUrl.jpg" required>
+
+              <label for="bedrooms">How Many Bedrooms?</label>
+              <input id="bedrooms" name="bedrooms" type="number" min="0" max="20" placeholder="1" required>
+
+              <label for="floors">How Many Floors?</label>
+              <input id="floors" name="floors" type="number" min="1" max="5" placeholder="1" required>
+
+              <label for="bathRooms">How Many Bathrooms?</label>
+              <input id="bathRooms" name="bathRooms" type="float" min="0" max="20" placeholder="1" required>
+
+              <input id="isHoa" name="isHoa" type="checkbox" class="width-auto">
+              <label for="isHoa" class="d-inline">Does it have an HOA?</label>
+
+              <br>
+
+              <input id="isRental" name="isRental" type="checkbox" class="width-auto">
+              <label for="isRental" class="d-inline">Is this a rental?</label>
+
+              <br>
+
+              <button type="submit" class="btn btn-secondary mt-1">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 

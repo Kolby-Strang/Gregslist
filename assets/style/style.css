@@ -1,33 +1,58 @@
 /* BASIC STYLES HERE */
 
-label{
+label {
   display: block;
+  margin-top: .2em;
 }
 
-input{
+input {
   width: 100%;
 }
 
-textarea{
+textarea {
   width: 50%;
 }
 
-.checkbox{
+p {
+  margin-bottom: 0;
+}
+
+.house-img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.checkbox {
   width: auto;
 }
 
-.color{
+.color {
   width: 10vw;
 
 }
 
-.car-img{
+.car-img {
   height: 40vh;
   width: 30%;
   object-fit: cover;
 }
 
-.car-border{
+.car-border {
   border-style: solid;
   border-width: 5px;
+}
+
+.delete-button {
+  width: max-content;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1em;
+  font-size: larger;
+}
+
+
+.width-auto {
+  width: auto;
 }
