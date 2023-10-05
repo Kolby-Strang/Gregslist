@@ -23,7 +23,7 @@ export class HousesController {
             newHouseData.isRental = newHouseData.isRental == 'on'
 
             housesService.addHouse(newHouseData)
-
+            event.target.reset()
             Pop.success('House Listed!!!')
             _drawHouses()
 
